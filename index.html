@@ -1,0 +1,40 @@
+<!Doctype html> 
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="x-UA-compatible"
+        content="IE=edge">
+        <title> JavaScript</title>
+    </head>
+    <body>
+        <script>
+            var voltas = parseInt(prompt("numero de voltas"));
+            var corredores = parseFloat(prompt("numero de corredores"));
+            
+            var corrida = new Array(voltas);
+            for(var i = 0; i < voltas; i++) {
+                corrida[i] = new Array(corredores);
+                for(var x = 0; x < corredores; x++) {
+                    corrida[i][x] = parseInt(prompt("Digite o tempo da volta" + i + "do corredor" + x));
+                }
+                document.write("----------------<br/>");
+            }
+               
+            var melhortempovolta = null;
+                for(var i = 0; i < corredores; i++) {
+                    for(var x = 0; x < corredores; x++) {
+                        document.write("Corredor:" + x + ":" + corrida[i][x] + "<br/>");
+                        if(melhortempovolta == null) {
+                            melhortempovolta = corrida[i][x];
+                        } else if(melhortempovolta > corrida [i][x]) {
+                            melhortempovolta = corrida[i][x];
+                        }
+                    }
+                }
+               document.write("Melhor tempo na volta" + melhortempovolta + "<br/>");
+               document.write("----------------<br/>");
+
+
+        </script>
+    </body>
+</html>
